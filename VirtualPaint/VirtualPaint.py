@@ -79,7 +79,6 @@ while True:
                          cv2.line(img, (xp, yp), (x1, y1), drawColor, brushthik)
                          cv2.line(imgCanvas, (xp, yp), (x1, y1), drawColor, brushthik)
 
-
                      xp, yp = x1, y1
 
         imgGray = cv2.cvtColor(imgCanvas, cv2.COLOR_BGR2GRAY)
@@ -87,14 +86,6 @@ while True:
         imgInv = cv2.cvtColor(imgInv, cv2.COLOR_GRAY2BGR)
         img = cv2.bitwise_and(img, imgInv)
         img = cv2.bitwise_or(img, imgCanvas)
-
-
-
-
-
-
-
-
         img[0:217, 0:1080] = header
         #img = cv2.addWeighted(img, 0.5, imgCanvas, 0.5, 0)
         cv2.imshow("Image", img)
